@@ -10,9 +10,9 @@
     <mat-label>Tel</mat-label>
     <input type="text" matInput formControlName="tel" />
     <mat-icon matPrefix>phone</mat-icon>
-    @if(telControl.errors?.['required']){
+    @if(telControl.hasError('required')){
     <mat-error>Give me your number !</mat-error>
-    } @else if(telControl.errors?.['pattern']) {
+    } @else if(telControl.hasError('pattern')) {
     <mat-error>That's not a real number !</mat-error>
     }
   </mat-form-field>
