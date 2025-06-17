@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { SaladModule } from './salad/salad-module';
 import { SharedMaterialModule } from './shared-material/shared-material-module';
+import { Order } from './order/order';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    Order
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SaladModule,
-    SharedMaterialModule
+    SharedMaterialModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
