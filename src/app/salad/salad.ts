@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './salad.scss'
 })
 export class Salad {
+  protected name = "hello"
 
+
+  changeName() {
+    this.name = "world"
+  }
 }
