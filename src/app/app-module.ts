@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { SaladModule } from './salad/salad-module';
-import { SharedMaterialModule } from './shared-material/shared-material-module';
+
 import { Order } from './order/order';
 import { ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
@@ -12,13 +12,12 @@ import { provideHttpClient } from '@angular/common/http';
 @NgModule({
     declarations: [App],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        SaladModule,
-        SharedMaterialModule,
-        ReactiveFormsModule,
-        Order
-    ],
+    BrowserModule,
+    AppRoutingModule,
+    SaladModule,
+    ReactiveFormsModule,
+    Order
+],
     providers: [
         provideBrowserGlobalErrorListeners(),
         provideHttpClient()
