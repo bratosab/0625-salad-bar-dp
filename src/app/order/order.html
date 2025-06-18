@@ -1,14 +1,14 @@
 <form [formGroup]="orderForm" (ngSubmit)="startOrder()">
   <mat-form-field>
     <mat-label>Name</mat-label>
-    <input type="text" matInput formControlName="name" />
+    <input type="text" matInput formControlName="name" data-test="name-form" />
     <mat-icon matPrefix>person</mat-icon>
     <mat-error>Please tell me your name !</mat-error>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Tel</mat-label>
-    <input type="text" matInput formControlName="tel" />
+    <input type="text" matInput formControlName="tel" data-test="tel-form" />
     <mat-icon matPrefix>phone</mat-icon>
     @if(telControl.hasError('required')){
     <mat-error>Give me your number !</mat-error>
@@ -17,5 +17,5 @@
     }
   </mat-form-field>
 
-  <button type="submit" mat-raised-button>Start Order =></button>
+  <button type="submit" mat-raised-button data-test="validate-form">Start Order =></button>
 </form>
