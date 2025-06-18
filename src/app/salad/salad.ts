@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { ToppingsService } from '../services/toppings-service';
+import { Topping } from '../models/topping.model';
 
 @Component({
   selector: 'app-salad',
   standalone: false,
   templateUrl: './salad.html',
-  styleUrl: './salad.scss'
+  styleUrl: './salad.scss',
 })
-export class Salad {
-  protected name = "hello"
+export class Salad implements OnInit {
+  protected toppings: Topping[] = [];
+  private toppingsService = inject(ToppingsService);
 
-
-  changeName() {
-    this.name = "world"
+  ngOnInit(): void {
+    this.toppingsService.getToppings().subscribe((toppings) => {
+      this.toppings = toppings;
+    });
   }
 }
