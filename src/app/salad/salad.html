@@ -1,1 +1,6 @@
+@if(toppings$ | async; as toppings){
 <app-toppings [toppings]="toppings" />
+<button (click)="faireAction(toppings)"></button>
+}@else{
+<p>Loading</p>
+}
