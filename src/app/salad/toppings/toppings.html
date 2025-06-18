@@ -1,5 +1,16 @@
 <ul>
-    <li *ngFor="let topping of toppings">
-        {{ topping.name }} ({{ topping.price | currency:'€' }})
-    </li>
+  @for(topping of toppings; track $index) {
+  <li (click)="toppingsService.chooseTopping(topping)">{{ topping.name }} ({{ topping.price | currency:'€' }})</li>
+  }
+</ul>
+
+
+<p>Total Price : {{ toppingsService.totalPrice() | currency:'€' }}</p>
+<ul>
+  @for(topping of toppingsService.chosenToppings(); track $index) {
+  <li>{{ topping.name }} ({{ topping.price | currency:'€' }})</li>
+  <button (click)="toppingsService.removeTopping($index)">Remove</button>
+  }@empty {
+    <p>Your salad is empty</p>
+  }
 </ul>

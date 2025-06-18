@@ -15,8 +15,8 @@ export class Order {
   private router = inject(Router)
 
   protected orderForm = this.formBuilder.group({
-    name: [this.orderService.name, Validators.required],
-    tel: [this.orderService.tel, [Validators.required, Validators.pattern('^0[6-7][0-9]{8}$')]],
+    name: [this.orderService.name(), Validators.required],
+    tel: [this.orderService.tel(), [Validators.required, Validators.pattern('^0[6-7][0-9]{8}$')]],
   });
 
   get telControl() {
@@ -25,8 +25,8 @@ export class Order {
 
   protected startOrder() {
     if (this.orderForm.valid) {
-      this.orderService.name = this.orderForm.value.name as string;
-      this.orderService.tel = this.orderForm.value.tel ?? '';
+      this.orderService.name.set(this.orderForm.value.name as string);
+      this.orderService.tel.set(this.orderForm.value.tel ?? '');
 
       this.router.navigate(['salad']);
     }

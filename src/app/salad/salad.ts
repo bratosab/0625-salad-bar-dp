@@ -13,24 +13,20 @@ import { OrderService } from '../services/order';
 export class Salad implements OnInit {
   protected toppings: Topping[] = [];
   protected toppings$: Observable<Topping[]>;
-  private toppingsService = inject(ToppingsService);
+  protected toppingsService = inject(ToppingsService);
   protected orderService = inject(OrderService);
 
   constructor() {
     this.toppings$ = this.toppingsService.getToppings().pipe(
-      tap(toppings => {
-        this.toppings = toppings
+      tap((toppings) => {
+        this.toppings = toppings;
       })
-    )
+    );
   }
 
   ngOnInit(): void {
     // this.toppingsService.getToppings().subscribe((toppings) => {
     //   this.toppings = toppings;
     // });
-  }
-
-  faireAction(toppings: Topping[]) {
-    console.log(toppings)
   }
 }

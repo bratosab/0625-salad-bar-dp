@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input, output, Output } from '@angular/core';
 import { Topping } from '../../models/topping.model';
+import { ToppingsService } from '../../services/toppings-service';
 
 @Component({
   selector: 'app-toppings',
@@ -9,4 +10,5 @@ import { Topping } from '../../models/topping.model';
 })
 export class Toppings {
   @Input() toppings: Topping[] = []
+  protected toppingsService = inject(ToppingsService);
 }

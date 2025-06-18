@@ -1,7 +1,7 @@
-<h2 class="mat-headline-medium">Welcome {{ orderService.name }}</h2>
+<h2 class="mat-headline-medium">Welcome {{ orderService.name() }}</h2>
 
 @if(toppings$ | async; as toppings){
-<app-toppings [toppings]="toppings" />
+<app-toppings [toppings]="toppings"  />
 }@else{
-<p>Loading</p>
+<p>Loading</p> 
 }
