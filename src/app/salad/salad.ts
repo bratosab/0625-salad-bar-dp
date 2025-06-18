@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ToppingsService } from '../services/toppings-service';
 import { Topping } from '../models/topping.model';
 import { Observable, tap } from 'rxjs';
+import { OrderService } from '../services/order';
 
 @Component({
   selector: 'app-salad',
@@ -13,6 +14,7 @@ export class Salad implements OnInit {
   protected toppings: Topping[] = [];
   protected toppings$: Observable<Topping[]>;
   private toppingsService = inject(ToppingsService);
+  protected orderService = inject(OrderService);
 
   constructor() {
     this.toppings$ = this.toppingsService.getToppings().pipe(
