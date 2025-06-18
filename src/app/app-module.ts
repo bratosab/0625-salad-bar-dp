@@ -10,21 +10,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    App,
-    Order
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SaladModule,
-    SharedMaterialModule,
-    ReactiveFormsModule
-  ],
-  providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideHttpClient()
-  ],
-  bootstrap: [App]
+    declarations: [App],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        SaladModule,
+        SharedMaterialModule,
+        ReactiveFormsModule,
+        Order
+    ],
+    providers: [
+        provideBrowserGlobalErrorListeners(),
+        provideHttpClient()
+    ],
+    bootstrap: [App]
 })
 export class AppModule { }
